@@ -10,3 +10,9 @@ const tooltipTriggerList = document.querySelectorAll(
 const tooltipList = [...tooltipTriggerList].map(
   (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
 );
+
+document.querySelectorAll(".add-to-cart-btn").forEach((item) => {
+  item.addEventListener("click", () => {
+    alert("أضيف المُنتج الى عربة الشراء");
+  });
+});
