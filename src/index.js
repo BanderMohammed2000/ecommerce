@@ -17,9 +17,6 @@ document.querySelectorAll(".add-to-cart-btn").forEach((item) => {
   });
 });
 
-document.getElementById("copyright").innerHTML =
-  "جميع الحقوق محفوظة للمتجر سنة " + new Date().getFullYear();
-
 document
   .querySelectorAll('.size-option input[type="radio"]')
   .forEach((item) => {
@@ -77,3 +74,67 @@ function calculateTotalPrice() {
   document.getElementById("total-price-for-all-product").innerHTML =
     totalPriceForAllProduct + "$";
 }
+
+const citiesByCountry = {
+  sa: ["جدة", "الرياض"],
+  eg: ["القاهرة", "الإسكندرية"],
+  jo: ["عمان", "الزرقاء"],
+  sy: ["دمشق", "حلب", "حماه"],
+};
+
+document.querySelectorAll('select[name="country"]').forEach((item) => {
+  item.addEventListener("change", () => {
+    const country = item.value;
+
+    const cities = citiesByCountry[country];
+
+    document
+      .querySelectorAll("#paymentcities option")
+      .forEach((option) => option.remove());
+
+    const firstOption = document.createElement("option");
+    const optionText = document.createTextNode("اختر المدينة");
+    firstOption.appendChild(optionText);
+    firstOption.setAttribute("value", "");
+    firstOption.setAttribute("disabled", "true");
+    firstOption.setAttribute("selected", "true");
+
+    const city_options = document.getElementById("paymentcities");
+    city_options.appendChild(firstOption);
+
+    cities.forEach((city) => {
+      const newOption = document.createElement("option");
+      const optionText = document.createTextNode(city);
+      newOption.appendChild(optionText);
+      newOption.setAttribute("value", city);
+      city_options.appendChild(newOption);
+    });
+  });
+});
+
+// اخفاء وإظهار حقول ادخال البطاقة الإئتمانية
+
+document
+  .querySelectorAll('#form-checkout input[name="payment-method"]')
+  .forEach((item) => {
+    item.addEventListener("change", () => {
+      const paymentMethod = item.value;
+
+      const creditCardInput = document.querySelectorAll(
+        "#credit_card_info input"
+      );
+
+      if (paymentMethod === "on_delivery") {
+        creditCardInput.forEach((input) => {
+          input.style.display = "none";
+        });
+      } else {
+        creditCardInput.forEach((input) => {
+          input.style.display = "block";
+        });
+      }
+    });
+  });
+
+document.getElementById("copyright").innerHTML =
+  "جميع الحقوق محفوظة للمتجر سنة " + new Date().getFullYear();
