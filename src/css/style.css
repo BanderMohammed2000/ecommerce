@@ -240,7 +240,7 @@ body {
 }
 
 .custom-thumbnail img {
-  height: 250px;
+  max-height: 250px;
   width: 100%;
   /* max-width: 250px; */
 }
@@ -660,6 +660,66 @@ h1.custom-heading {
   width: 98%;
 }
 
+/*
+----- Search page -----
+*/
+
+#form-advanced-search {
+  border: 1px solid #ebebeb;
+  padding-bottom: 20px;
+  margin-bottom: 35px;
+  height: fit-content;
+}
+
+#form-advanced-search .panel {
+  border: none;
+  padding: 5px;
+}
+
+.panel .card-header {
+  background-color: transparent;
+  margin-bottom: 15px;
+  padding-bottom: 13px;
+}
+
+.custom-list-group .list-group-item {
+  border: none;
+}
+
+.custom-list-group {
+  border-bottom: 1px solid #ebebeb;
+}
+
+#form-advanced-search label {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.custom-pagination .page-link {
+  margin-left: 3px !important;
+  margin-right: 3px !important;
+  border: 1px solid #ebebeb !important;
+  width: 32px !important;
+  height: 32px !important;
+  color: #c2c2c2 !important;
+  text-decoration: none !important;
+  outline: none !important;
+  transition: all 0.3s ease !important;
+}
+
+.custom-pagination .page-item.active .page-link {
+  background-color: #f8ad47 !important;
+  color: #ffffff !important;
+  border-color: #f8ad47 !important;
+}
+
+.custom-pagination .page-link:active,
+.custom-pagination .page-link:focus,
+.custom-pagination .page-link:hover {
+  color: #f8ad47 !important;
+  background-color: #ffffff !important;
+  border-color: #f8ad47 !important;
+}
 /* 
 ----- Responsive styles ----- 
 */
@@ -777,6 +837,12 @@ h1.custom-heading {
     line-height: 40px;
     margin: 10px;
     font-size: 20px;
+  }
+
+  .search-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
