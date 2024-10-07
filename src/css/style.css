@@ -720,6 +720,28 @@ h1.custom-heading {
   background-color: #ffffff !important;
   border-color: #f8ad47 !important;
 }
+
+/* 
+----- Contact page -----
+*/
+
+#map {
+  padding: 0;
+}
+
+#contact-options h4 {
+  font-size: 18px;
+}
+
+#contact-info .fa-lg {
+  color: #f3af41;
+  margin: 10px 0px 0px 10px;
+}
+
+#contact-options textarea {
+  height: 105px !important;
+}
+
 /* 
 ----- Responsive styles ----- 
 */
