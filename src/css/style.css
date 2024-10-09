@@ -531,6 +531,11 @@ h1.custom-heading {
   width: 98%;
 }
 
+.custom-form-control[type="number"],
+.custom-form-control[type="email"] {
+  text-align: end;
+}
+
 /*
 ----- Search page -----
 */
