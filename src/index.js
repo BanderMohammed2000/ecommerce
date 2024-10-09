@@ -1,8 +1,9 @@
 window.bootstrap = require("bootstrap/dist/js/bootstrap.bundle.js");
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./sass/custom.scss";
 import "./css/style.css";
 //نلاحظ اننا لم نضيف بالاخير امتداد جافاسكريبت, وسواء اضفناه او لا فالنتيجة نفسها وذلك ربما بسبب اننا في ملف الجافاسكريبت ليس من الضروري اضافته
 import "@fortawesome/fontawesome-free/js/all.min";
+import "./sass/style.scss";
 
 const tooltipTriggerList = document.querySelectorAll(
   '[data-bs-toggle="tooltip"]'
